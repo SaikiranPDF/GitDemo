@@ -1,0 +1,14 @@
+@tag
+Feature: Purchase the order from Ecommerce Website
+	I 
+	
+	@tag
+	Scenario Outline: positive test of submitting the order
+		Given Logged in with username 
+		When:
+		Then:
+		
+		Examples:
+		| name  			  		  | password | status  |
+		| saikirankabothula@gmail.com | Saikiran.pdf1     | success |
+		| name2 |     7 | Fail    |

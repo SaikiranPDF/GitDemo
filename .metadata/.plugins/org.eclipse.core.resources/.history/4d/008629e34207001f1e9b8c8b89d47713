@@ -1,0 +1,39 @@
+package KiranKabothula.StepDefinitions;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+
+import KiranKabothula.TestComponents.BaseTest;
+import KiranKabothula.pageobjects.LandingPage;
+import KiranKabothula.pageobjects.ProductCatalogue;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class StepDefinitionImpl extends BaseTest {
+
+	public  LandingPage landingPage;
+	public ProductCatalogue productcatalogue;
+	@Given("I landed on Ecommerce Page")
+	public void I_landed_on_Ecommerce_Page() throws IOException
+	{
+		landingPage = launchApplication();
+	}
+	
+	@Given("^Logged in with username (.+) and password (.+)$")
+	public void logged_in_username_and_password(String username, String password)
+	{
+		productcatalogue = landingpage.loginApplication(username,password);	
+	}
+	
+	@When("^I add the product (.+) to cart$")
+	public void i_add_product_to_cart(String productName) throws InterruptedException 
+	{
+		List<WebElement> products = productcatalogue.getProductList();
+		productcatalogue.addProductToCart(productName);
+	}
+	
+	
+	
+}

@@ -1,0 +1,21 @@
+package KiranKabothula.StepDefinitions;
+
+import java.io.IOException;
+
+import KiranKabothula.TestComponents.BaseTest;
+import KiranKabothula.pageobjects.LandingPage;
+import io.cucumber.java.en.Given;
+
+public class StepDefinitionImpl extends BaseTest {
+
+	public  LandingPage landingPage;
+	@Given("I landed on Ecommerce Page")
+	public void I_landed_on_Ecommerce_Page() throws IOException
+	{
+		landingPage = launchApplication();
+	}
+	@Given("Logged in with username (.+) and password (.+)")
+	
+	
+	
+}
